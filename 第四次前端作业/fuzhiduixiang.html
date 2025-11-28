@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        obj = {uname:'梓喵',age:17,gender:'女',instrument:'guitar'};
+        function copy(insertObj){
+            let newObj = {};
+            for(let key in insertObj){
+                newObj[key] = insertObj[key];
+            }
+            return newObj;
+        }
+
+        let obj1 = copy(obj);
+        obj1.uname = '澪酱';
+        obj1.age = 18;
+        obj1.instrument = 'bass';
+        let obj2 = copy(obj);
+        obj2.uname = '呆唯';
+        obj2.age = 18;
+        let obj3 = copy(obj);
+        obj3.uname = '大小姐';
+        obj3. instrument = 'keyboard';
+        obj3.age =18; 
+        let obj4 = copy(obj);
+        obj4.uname = '律队';
+        obj4.age =18; 
+        obj4.instrument = 'drum';
+
+        let arr = [];
+        arr.push(obj,obj1,obj2,obj3,obj4);
+
+        console.table(arr);
+        </script>
+</body>
+</html>
