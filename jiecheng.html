@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   /* function factor(n){
+        let result = 1;
+        for(let i = 1;i<=n;i++){
+            result *= i;
+        }
+        return result;
+    }
+console.log(factor(1));
+console.log(factor(6));
+console.log(factor(10)); */
+
+function factorial(n){
+    if(n == 1) return 1;
+    return n*factorial(n-1);
+}
+console.log(factorial(1));
+console.log(factorial(6));
+console.log(factorial(10));
+
+    </script>
+</body>
+</html>
