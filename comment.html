@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+    <style>
+        #commentInput {
+            padding: 5px;
+            width: 300px;
+        }
+
+        #sendButton {
+            padding: 5px 10px;
+        }
+
+        #commentList div {
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            padding: 5px;
+        }
+
+        button.delete-button {
+            display: none;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 3px 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+     <input type="text" id="commentInput" placeholder="请输入评论">
+     <button id="sendButton">发送
+     </button>
+     <div id="commentList">
+     </div>
+     <script>
+        const commentInput = document.getElementById('commentInput');
+        const sendButton = document.getElementById('sendButton');
+        const commentList = document.getElementById('commentList');
+        sendButton.addEventListener('click', function () {
+        const commentText = commentInput.value;
+        if (commentText.trim()!== '') {
+        const commentDiv = document.createElement('div');
+        commentDiv.textContent = commentText;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = '删除';
+        deleteButton.className = 'delete - button';
+
+        commentDiv.appendChild(deleteButton);
+
+        commentList.appendChild(commentDiv);
+
+        commentInput.value = '';
+
+        commentDiv.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            deleteButton.style.display = 'inline - block';
+        });
+
+            deleteButton.addEventListener('click', function () {
+            commentDiv.remove();
+        });
+    }
+});
+     </script>
+</body>
+</html>
