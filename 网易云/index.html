@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云音乐 PC 端</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>网易云音乐</h1>
+            </div>
+            <nav class="menu">
+                <a href="#" class="menu-item active" data-page="home">发现音乐</a>
+                <a href="#" class="menu-item" data-page="search">搜索</a>
+                <a href="#" class="menu-item" data-page="playlist">歌单</a>
+            </nav>
+        </aside>
+
+
+        <main class="main-content">
+
+            <div id="home-page" class="page active">
+                <h2>推荐内容</h2>
+                <div class="banner-container">
+                    <div id="banner" class="banner">正在加载...</div>
+                </div>
+                <h3>歌单推荐</h3>
+                <div id="playlists" class="playlist-grid">正在加载...</div>
+            </div>
+
+            <div id="search-page" class="page">
+                <h2>搜索</h2>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索歌曲、歌手">
+                    <button id="search-btn">搜索</button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+
+            <div id="playlist-page" class="page">
+                <div id="playlist-detail" class="playlist-detail"></div>
+            </div>
+        </main>
+    </div>
+
+    <div class="player">
+        <div class="player-info">
+            <img id="player-cover" src="" alt="封面" class="player-cover">
+            <div class="player-text">
+                <div id="player-name" class="player-name">暂无播放</div>
+                <div id="player-artist" class="player-artist">-</div>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button id="prev-btn">上一首</button>
+            <button id="play-btn">播放</button>
+            <button id="next-btn">下一首</button>
+        </div>
+        <div class="player-progress">
+            <span id="current-time">00:00</span>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <span id="total-time">00:00</span>
+        </div>
+        <audio id="audio"></audio>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
